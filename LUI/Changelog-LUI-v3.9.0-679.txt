@@ -1,0 +1,191 @@
+------------------------------------------------------------------------
+r679 | chaoslux | 2014-10-17 06:14:42 +0000 (Fri, 17 Oct 2014) | 1 line
+Changed paths:
+   A /tags/v3.9.0-679 (from /trunk:678)
+
+Tagging as v3.9.0-679
+------------------------------------------------------------------------
+r678 | chaoslux | 2014-10-17 05:15:33 +0000 (Fri, 17 Oct 2014) | 1 line
+Changed paths:
+   M /trunk/modules/datatext.lua
+
+- Attempt to fix or at least catch the datatext strsplit error. 
+------------------------------------------------------------------------
+r677 | chaoslux | 2014-10-17 02:02:39 +0000 (Fri, 17 Oct 2014) | 1 line
+Changed paths:
+   M /trunk/unitframes/core/elements/classicons.lua
+   M /trunk/unitframes/core/elements/eclipsebar.lua
+   M /trunk/unitframes/core/elements/healprediction.lua
+   M /trunk/unitframes/core/elements/stagger.lua
+   M /trunk/unitframes/core/elements/tags.lua
+   M /trunk/unitframes/core/oUF.toc
+
+Updated embedded oUF to version 1.6.8
+------------------------------------------------------------------------
+r676 | chaoslux | 2014-10-17 02:00:33 +0000 (Fri, 17 Oct 2014) | 2 lines
+Changed paths:
+   M /trunk/modules/tooltip.lua
+
+Tooltip: Fixed few errors that happened due to my previous revision.
+Tooltip: The Hide Skills in Combat should now probably work without requiring a UI reload. (And shouldn't hide skills when not in combat erroneously.)
+------------------------------------------------------------------------
+r675 | chaoslux | 2014-10-17 01:03:45 +0000 (Fri, 17 Oct 2014) | 3 lines
+Changed paths:
+   M /trunk/modules/tooltip.lua
+
+Tooltip: Clear anchor points during the SetDefaultAnchor call, this should prevent all cases of tooltip flickering in two different locations.
+Tooltip: Removed obnoxious and wasteful OnUpdate call.
+Tooltip: Added a Hide call inside SetStyle if Show In Combat is disabled. This is a much better way of handling it than using OnUpdate.
+------------------------------------------------------------------------
+r674 | kitkeh | 2014-10-16 07:19:09 +0000 (Thu, 16 Oct 2014) | 1 line
+Changed paths:
+   M /trunk/modules/vengeance.lua
+
+- Vengeance Bar: Rename to Resolve Bar, update Spell ID to remove LUA errors. Max value is probably horrendously wrong, but will stop you getting errors. Will do more research on Resolve in the coming days.
+------------------------------------------------------------------------
+r673 | kitkeh | 2014-10-16 05:17:08 +0000 (Thu, 16 Oct 2014) | 1 line
+Changed paths:
+   M /trunk/unitframes/core/elements/eclipsebar.lua
+
+- Unitframes: Sorry Druids, this should fix your problems. :(
+------------------------------------------------------------------------
+r672 | kitkeh | 2014-10-15 18:54:35 +0000 (Wed, 15 Oct 2014) | 1 line
+Changed paths:
+   M /trunk/unitframes/core/elements/classicons.lua
+   M /trunk/unitframes/core/elements/eclipsebar.lua
+   M /trunk/unitframes/core/oUF.toc
+   M /trunk/unitframes/core/oUF.xml
+
+- Unitframes: Update embedded oUF to v1.6.7.
+------------------------------------------------------------------------
+r671 | kitkeh | 2014-10-15 18:24:04 +0000 (Wed, 15 Oct 2014) | 1 line
+Changed paths:
+   M /trunk/unitframes/core/elements/eclipsebar.lua
+
+- Unitframes: Small fix for Balance Druids. Sorry guys, I forgot to bring this one in when I updated oUF.
+------------------------------------------------------------------------
+r670 | chaoslux | 2014-10-15 08:23:15 +0000 (Wed, 15 Oct 2014) | 3 lines
+Changed paths:
+   M /trunk/modules/tooltip.lua
+
+Tooltip: Refactored some parts of the tooltip code to pick their unit from new GetTooltipUnit function. (Fixes the GetUnit error)
+Tooltip: Refactored some code to update the tooltip border on every unit change, since WoD changed GameTooltip OnShow behavior.
+Tooltip: Changed how Item coloring was handled to prevent any issues with faulty logic in the future. (In the same vein as the GetUnit error) 
+------------------------------------------------------------------------
+r669 | kitkeh | 2014-10-15 06:37:52 +0000 (Wed, 15 Oct 2014) | 1 line
+Changed paths:
+   M /trunk/unitframes/core/colors.lua
+   M /trunk/unitframes/core/elements/castbar.lua
+   M /trunk/unitframes/core/elements/eclipsebar.lua
+   M /trunk/unitframes/core/elements/power.lua
+   M /trunk/unitframes/core/elements/runebar.lua
+   M /trunk/unitframes/core/events.lua
+
+- Unitframes: Minor updates to the embedded oUF
+------------------------------------------------------------------------
+r668 | kitkeh | 2014-10-15 05:11:08 +0000 (Wed, 15 Oct 2014) | 1 line
+Changed paths:
+   M /trunk/modules/bags.lua
+
+- Bags: IsReagentBankUnlocked() check to stop the reagent tab doing stupid things. Permanent fix to come.
+------------------------------------------------------------------------
+r667 | chaoslux | 2014-10-15 04:45:05 +0000 (Wed, 15 Oct 2014) | 1 line
+Changed paths:
+   M /trunk/modules/bags.lua
+
+- Reloads the bank layout if it's opened when you change the Item Quality option. This wasn't happening after the last revision's changes. 
+------------------------------------------------------------------------
+r666 | chaoslux | 2014-10-15 03:25:10 +0000 (Wed, 15 Oct 2014) | 5 lines
+Changed paths:
+   M /trunk/modules/bags.lua
+
+Few Bags related commmits (no reagents fixes though)
+- Changed the way we handle new items to match WoD: Instead of a huge blue square, it's now a flashing animation for new items in your bags.
+- Changed the size of NewItemTexture to match the LUI bag slots. (as opposed to the default UI's slot size)
+- Since quest items have been purged, removed the option to highlight quest items. It has been replaced by an option to show new item animations or not.
+- The Item Quality option in the Bank tab never did anything and has been removed. 
+------------------------------------------------------------------------
+r665 | chaoslux | 2014-10-15 00:50:26 +0000 (Wed, 15 Oct 2014) | 1 line
+Changed paths:
+   M /trunk/modules/minimap.lua
+
+- Minimap: Change Objective Tracker X offset to -150 (from -100) to prevent the new art from overlapping with the sidebar. 
+------------------------------------------------------------------------
+r664 | kitkeh | 2014-10-14 10:09:21 +0000 (Tue, 14 Oct 2014) | 18 lines
+Changed paths:
+   M /trunk/LUI.lua
+   M /trunk/LUI.toc
+   M /trunk/LUI.xml
+   M /trunk/modules/artwork.lua
+   M /trunk/modules/bags.lua
+   M /trunk/modules/chat.lua
+   M /trunk/modules/datatext.lua
+   M /trunk/modules/frames.lua
+   M /trunk/modules/micromenu.lua
+   M /trunk/modules/minimap.lua
+   M /trunk/modules/tooltip.lua
+   M /trunk/modules/worldmap/coords.lua
+   M /trunk/modules/worldmap/instancemaps.lua
+   M /trunk/modules/worldmap/questpoi.lua
+   M /trunk/modules/worldmap/worldmap.lua
+   M /trunk/modules/worldmap/worldmap.xml
+   M /trunk/scripts/talentspam.lua
+   M /trunk/unitframes/core/LICENSE
+   M /trunk/unitframes/core/colors.lua
+   M /trunk/unitframes/core/elements/altpowerbar.lua
+   M /trunk/unitframes/core/elements/assistant.lua
+   M /trunk/unitframes/core/elements/aura.lua
+   M /trunk/unitframes/core/elements/castbar.lua
+   M /trunk/unitframes/core/elements/classicons.lua
+   M /trunk/unitframes/core/elements/combat.lua
+   M /trunk/unitframes/core/elements/cpoints.lua
+   M /trunk/unitframes/core/elements/eclipsebar.lua
+   M /trunk/unitframes/core/elements/healprediction.lua
+   M /trunk/unitframes/core/elements/health.lua
+   M /trunk/unitframes/core/elements/leader.lua
+   M /trunk/unitframes/core/elements/lfdrole.lua
+   M /trunk/unitframes/core/elements/masterlooter.lua
+   M /trunk/unitframes/core/elements/picon.lua
+   M /trunk/unitframes/core/elements/portraits.lua
+   M /trunk/unitframes/core/elements/power.lua
+   M /trunk/unitframes/core/elements/pvp.lua
+   M /trunk/unitframes/core/elements/qicon.lua
+   M /trunk/unitframes/core/elements/range.lua
+   M /trunk/unitframes/core/elements/readycheck.lua
+   M /trunk/unitframes/core/elements/resting.lua
+   M /trunk/unitframes/core/elements/ricons.lua
+   A /trunk/unitframes/core/elements/stagger.lua
+   M /trunk/unitframes/core/elements/threat.lua
+   M /trunk/unitframes/core/elements/totems.lua
+   M /trunk/unitframes/core/events.lua
+   M /trunk/unitframes/core/oUF.toc
+   M /trunk/unitframes/core/oUF.xml
+   M /trunk/unitframes/core/ouf.lua
+   M /trunk/unitframes/layout/layout.lua
+   M /trunk/unitframes/options/importexport.lua
+
+LUI v3.9.0 - Warlords of Draenor
+================================
+
+This update provides support for World of Warcraft: Warlords of Draenor (v6.0.2 WoD Pre-patch and above).
+
+NOTE: This update is for 6.0 and above. It will NOT work with any 5.x patch - sorry EU, if you update before 6.0 is released for you, roll back to the most recent LUI v3.8.3 alpha from http://wow.curseforge.com/addons/lui/files/.
+
+- LUI Core: Update frame creation statements.
+- Artwork: Hide "Orb" options rather than show as disabled.
+- Bags: Add support for the new Reagents bank. Update new item/store item highlighting.
+- Infotext: Update various API commands. Add support for Heroes of the Storm in the Friends display.
+- Frames: Update frame creation statements.
+- Micromenu: Updates due to WoD changes, frame name changes, etc.
+- Minimap: Update for frame name changes.
+- World Map: Updates for frame name changes. Remove our instance maps options for the time being. Remove code behind our objective tracker options until some issues resolved.
+- Talent Spam: Code optimizations.
+- Unitframes: Update embedded oUF from v1.6.5 to v1.6.6 (NOTE: this is the latest MoP version, no WoD version has been released yet, however I haven't seen any issues with this one yet).
+- Tooltips: Minor updates for frame changes.
+------------------------------------------------------------------------
+r663 | chaoslux | 2014-08-16 08:07:56 +0000 (Sat, 16 Aug 2014) | 1 line
+Changed paths:
+   M /trunk/modules/datatext.lua
+
+- Add fullName to all guild buttons, so that Alt-Click to Invite will always work regardless of settings. (Fix not being able to invite connected realms guild members when hiding realm names) 
+------------------------------------------------------------------------

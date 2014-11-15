@@ -1,0 +1,7 @@
+## Interface: 50300
+## Title: Annoying Chat Fade
+## Notes: Stops the text from fading in the chat boxes.
+## Author: Petrah (SileniaD) of Nesingwary
+## Version: 1.0
+
+AnnoyingChatFade.lua
